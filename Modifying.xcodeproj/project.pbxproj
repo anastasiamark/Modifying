@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		58FC1607215B9D6700BF2712 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FC1606215B9D6700BF2712 /* AppDelegate.swift */; };
-		58FC1609215B9D6700BF2712 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FC1608215B9D6700BF2712 /* ViewController.swift */; };
+		58FC1609215B9D6700BF2712 /* ActiveGoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FC1608215B9D6700BF2712 /* ActiveGoalsViewController.swift */; };
 		58FC160C215B9D6700BF2712 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58FC160A215B9D6700BF2712 /* Main.storyboard */; };
 		58FC160F215B9D6700BF2712 /* Modifying.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 58FC160D215B9D6700BF2712 /* Modifying.xcdatamodeld */; };
 		58FC1611215B9D6900BF2712 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58FC1610215B9D6900BF2712 /* Assets.xcassets */; };
@@ -18,7 +18,7 @@
 /* Begin PBXFileReference section */
 		58FC1603215B9D6700BF2712 /* Modifying.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Modifying.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58FC1606215B9D6700BF2712 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		58FC1608215B9D6700BF2712 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		58FC1608215B9D6700BF2712 /* ActiveGoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveGoalsViewController.swift; sourceTree = "<group>"; };
 		58FC160B215B9D6700BF2712 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		58FC160E215B9D6700BF2712 /* Modifying.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Modifying.xcdatamodel; sourceTree = "<group>"; };
 		58FC1610215B9D6900BF2712 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -56,15 +56,47 @@
 		58FC1605215B9D6700BF2712 /* Modifying */ = {
 			isa = PBXGroup;
 			children = (
+				58FC161C215BA81700BF2712 /* CoreData */,
+				58FC161B215BA7C600BF2712 /* Classes */,
 				58FC1606215B9D6700BF2712 /* AppDelegate.swift */,
-				58FC1608215B9D6700BF2712 /* ViewController.swift */,
 				58FC160A215B9D6700BF2712 /* Main.storyboard */,
 				58FC1610215B9D6900BF2712 /* Assets.xcassets */,
 				58FC1612215B9D6900BF2712 /* LaunchScreen.storyboard */,
 				58FC1615215B9D6900BF2712 /* Info.plist */,
-				58FC160D215B9D6700BF2712 /* Modifying.xcdatamodeld */,
 			);
 			path = Modifying;
+			sourceTree = "<group>";
+		};
+		58FC161B215BA7C600BF2712 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				58FC161E215BA8E500BF2712 /* NewGoalViewController */,
+				58FC161D215BA8D800BF2712 /* ActiveGoalsViewController */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		58FC161C215BA81700BF2712 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				58FC160D215B9D6700BF2712 /* Modifying.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		58FC161D215BA8D800BF2712 /* ActiveGoalsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				58FC1608215B9D6700BF2712 /* ActiveGoalsViewController.swift */,
+			);
+			path = ActiveGoalsViewController;
+			sourceTree = "<group>";
+		};
+		58FC161E215BA8E500BF2712 /* NewGoalViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NewGoalViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,7 +171,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				58FC160F215B9D6700BF2712 /* Modifying.xcdatamodeld in Sources */,
-				58FC1609215B9D6700BF2712 /* ViewController.swift in Sources */,
+				58FC1609215B9D6700BF2712 /* ActiveGoalsViewController.swift in Sources */,
 				58FC1607215B9D6700BF2712 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
