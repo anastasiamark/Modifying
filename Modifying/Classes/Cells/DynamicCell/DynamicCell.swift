@@ -10,6 +10,15 @@ import UIKit
 
 class DynamicCell: UITableViewCell {
     
+    @IBOutlet weak var goalLabel: UILabel!
+    @IBOutlet weak var explanationLabel: UILabel!
+    
+    @IBOutlet weak var goalImageView: UIImageView!
+    @IBOutlet weak var disclosureImageView: UIImageView!
+    
+    @IBOutlet weak var imageViewBottomToSuperviewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var imageViewBottomToExplanationLabelTopConstraint: NSLayoutConstraint!
+    
     var useExplanationLabel = true {
         didSet {
             if useExplanationLabel {
@@ -23,44 +32,17 @@ class DynamicCell: UITableViewCell {
         }
     }
 
-    @IBOutlet weak var goalLabel: UILabel!
-    @IBOutlet weak var explanationLabel: UILabel!
+    //MARK: Cell Configuration Method
     
-    @IBOutlet weak var goalImageView: UIImageView!
-    @IBOutlet weak var disclosureImageView: UIImageView!
-    
-    @IBOutlet weak var imageViewBottomToSuperviewBottomConstraint: NSLayoutConstraint!
-    @IBOutlet weak var imageViewBottomToExplanationLabelTopConstraint: NSLayoutConstraint!
-    
-    // MARK: - Lifecycle
-    
-//    override func awakeFromNib() {
-//        super.awakeFromNib()
-//
-//        if !useExplanationLabel {
-//            hideExplanationLabel()
-//        } else {
-//            showExplanationLabel()
-//        }
-//    }
-    
-//    override func prepareForReuse() {
-//        super.prepareForReuse()
-//
-//        imageViewBottomLowPriorityConstrain.isActive = true
-//        imageViewHighPriorityConstraint.isActive = true
-//    }
-    
-//    private func hideExplanationLabel() {
-//        explanationLabel.isHidden = true
-//        imageViewBottomLowPriorityConstrain.isActive = false
-//        imageViewHighPriorityConstraint.isActive = true
-//    }
-    
-//    private func showExplanationLabel() {
-//        explanationLabel.isHidden = false
-        //imageViewBottomLowPriorityConstrain.isActive = true
-        //imageViewHighPriorityConstraint.isActive = false
-//    }
+    func configureCell(_ goalLabelText: String?, _ explanationLabelText: String?) {
+        if let explanationText = explanationLabelText, let goalText = goalLabelText {
+            self.useExplanationLabel = true
+            self.explanationLabel.text = explanationText
+            self.goalLabel.text = goalText
+        } else if let goalText = goalLabelText {
+            self.useExplanationLabel = false
+            self.goalLabel.text = goalText
+        }
+    }
     
 }

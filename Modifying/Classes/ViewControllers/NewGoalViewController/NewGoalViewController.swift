@@ -8,24 +8,20 @@
 
 import UIKit
 
+
 class NewGoalViewController: UIViewController {
     
-    @IBOutlet weak var topicsTableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
     
-    enum HabbitTopics: Int {
-        case own
-        case proposed
-    }
-    
-    let topics = ["Health", "Fitness", "Home", "Habbies", "Social", "Efficiency"] // Standard topics for section "topic"
+    private let dynamicCellReuseIdentifier = "DynamicCell"
+    private let topics = ["Health", "Fitness", "Home", "Hobbies", "Social", "Efficiency"] // Standard topics for goal's choice
 
+    //MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        topicsTableView.register(UINib(nibName: "DynamicCell", bundle: nil), forCellReuseIdentifier: "DynamicCell")
-
+        tableView.register(UINib(nibName: dynamicCellReuseIdentifier, bundle: nil), forCellReuseIdentifier: dynamicCellReuseIdentifier)
     }
-
 }
 
 extension NewGoalViewController: UITableViewDelegate {
@@ -40,17 +36,11 @@ extension NewGoalViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "DynamicCell", for: indexPath) as! DynamicCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: dynamicCellReuseIdentifier, for: indexPath) as! DynamicCell
         if indexPath.row == 0 {
-            cell.useExplanationLabel = true
-            
-            cell.goalLabel.text = "Write my own"
-            cell.explanationLabel.text = "Or choose from these topics"
-            cell.awakeFromNib()
+            cell.configureCell("Write my own", "Or choose from these topics")
         } else {
-            cell.useExplanationLabel = false
-            cell.goalLabel.text = topics[indexPath.row - 1]
-            cell.awakeFromNib()
+            cell.configureCell(topics[indexPath.row - 1], nil)
         }
         return cell
     }

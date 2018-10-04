@@ -10,16 +10,13 @@ import UIKit
 
 class ActiveGoalsViewController: UIViewController {
 
-    @IBOutlet weak var activeGoalsTableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
     
+    //MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        
+        tableView.register(UINib(nibName: "ActiveGoalCell", bundle: nil), forCellReuseIdentifier: "ActiveGoalCell")
     }
     
     @IBAction func addNewGoal(_ sender: UIBarButtonItem) {
@@ -46,8 +43,9 @@ extension ActiveGoalsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "GoalCell", for: indexPath) as! GoalCell
-        cell.goalLabel.text = "My Goal!"
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ActiveGoalCell", for: indexPath)
+        
         return cell
     }
     

@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,33 +21,6 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZQB-wM-EZs" userLabel="Active Goals Table View">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="GoalCell" id="6go-A0-EtV" customClass="GoalCell" customModule="Modifying" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6go-A0-EtV" id="BpX-Ym-rYV">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GoalLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9nP-dS-ZuJ">
-                                                    <rect key="frame" x="15" y="11" width="345" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="9nP-dS-ZuJ" firstAttribute="centerX" secondItem="BpX-Ym-rYV" secondAttribute="centerX" id="ONH-Ga-6N4"/>
-                                                <constraint firstItem="9nP-dS-ZuJ" firstAttribute="leading" secondItem="BpX-Ym-rYV" secondAttribute="leadingMargin" id="cGc-U6-U9i"/>
-                                                <constraint firstItem="9nP-dS-ZuJ" firstAttribute="centerY" secondItem="BpX-Ym-rYV" secondAttribute="centerY" id="f6L-IA-Ugs"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="9nP-dS-ZuJ" secondAttribute="trailing" id="hjP-V9-fMa"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="goalLabel" destination="9nP-dS-ZuJ" id="shk-0H-xAR"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="uUN-Ye-aD8" id="u3E-U4-bHm"/>
                                     <outlet property="delegate" destination="uUN-Ye-aD8" id="6Xs-fA-oPe"/>
@@ -72,7 +44,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="activeGoalsTableView" destination="ZQB-wM-EZs" id="Izv-p5-xwg"/>
+                        <outlet property="tableView" destination="ZQB-wM-EZs" id="Izv-p5-xwg"/>
                         <segue destination="8NR-2L-afX" kind="show" identifier="AddGoal" id="MB9-oL-4dg"/>
                     </connections>
                 </viewController>
@@ -107,7 +79,7 @@
                         <viewLayoutGuide key="safeArea" id="ara-Bn-POf"/>
                     </view>
                     <connections>
-                        <outlet property="topicsTableView" destination="wSq-IS-MXi" id="vlC-XH-XY2"/>
+                        <outlet property="tableView" destination="wSq-IS-MXi" id="vlC-XH-XY2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hnp-Gd-I1o" userLabel="First Responder" sceneMemberID="firstResponder"/>
