@@ -7,22 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		585F62FF21668B5600F90F22 /* ActiveGoalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585F62FD21668B5600F90F22 /* ActiveGoalCell.swift */; };
-		585F630021668B5600F90F22 /* ActiveGoalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 585F62FE21668B5600F90F22 /* ActiveGoalCell.xib */; };
+		587CDB6F216E1A0B007994B3 /* ActiveGoalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587CDB6D216E1A0B007994B3 /* ActiveGoalCell.swift */; };
+		587CDB70216E1A0B007994B3 /* ActiveGoalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 587CDB6E216E1A0B007994B3 /* ActiveGoalCell.xib */; };
+		5885A764217E16BD00E2598D /* HabitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5885A763217E16BD00E2598D /* HabitsViewController.swift */; };
 		58FC1607215B9D6700BF2712 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FC1606215B9D6700BF2712 /* AppDelegate.swift */; };
 		58FC1609215B9D6700BF2712 /* ActiveGoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FC1608215B9D6700BF2712 /* ActiveGoalsViewController.swift */; };
 		58FC160C215B9D6700BF2712 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58FC160A215B9D6700BF2712 /* Main.storyboard */; };
 		58FC160F215B9D6700BF2712 /* Modifying.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 58FC160D215B9D6700BF2712 /* Modifying.xcdatamodeld */; };
 		58FC1611215B9D6900BF2712 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 58FC1610215B9D6900BF2712 /* Assets.xcassets */; };
 		58FC1614215B9D6900BF2712 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58FC1612215B9D6900BF2712 /* LaunchScreen.storyboard */; };
-		58FF9375215E64BC004FC40A /* NewGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FF9374215E64BC004FC40A /* NewGoalViewController.swift */; };
+		58FF9375215E64BC004FC40A /* HabitsCategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FF9374215E64BC004FC40A /* HabitsCategoryViewController.swift */; };
 		58FF937F215EA71A004FC40A /* DynamicCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FF937D215EA71A004FC40A /* DynamicCell.swift */; };
 		58FF9380215EA71A004FC40A /* DynamicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58FF937E215EA71A004FC40A /* DynamicCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		585F62FD21668B5600F90F22 /* ActiveGoalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveGoalCell.swift; sourceTree = "<group>"; };
-		585F62FE21668B5600F90F22 /* ActiveGoalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActiveGoalCell.xib; sourceTree = "<group>"; };
+		587CDB6D216E1A0B007994B3 /* ActiveGoalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveGoalCell.swift; sourceTree = "<group>"; };
+		587CDB6E216E1A0B007994B3 /* ActiveGoalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActiveGoalCell.xib; sourceTree = "<group>"; };
+		5885A763217E16BD00E2598D /* HabitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsViewController.swift; sourceTree = "<group>"; };
 		58FC1603215B9D6700BF2712 /* Modifying.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Modifying.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58FC1606215B9D6700BF2712 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		58FC1608215B9D6700BF2712 /* ActiveGoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveGoalsViewController.swift; sourceTree = "<group>"; };
@@ -31,7 +33,7 @@
 		58FC1610215B9D6900BF2712 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		58FC1613215B9D6900BF2712 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		58FC1615215B9D6900BF2712 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		58FF9374215E64BC004FC40A /* NewGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGoalViewController.swift; sourceTree = "<group>"; };
+		58FF9374215E64BC004FC40A /* HabitsCategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsCategoryViewController.swift; sourceTree = "<group>"; };
 		58FF937D215EA71A004FC40A /* DynamicCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicCell.swift; sourceTree = "<group>"; };
 		58FF937E215EA71A004FC40A /* DynamicCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DynamicCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -47,6 +49,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5885A765217E16C500E2598D /* HabitsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5885A763217E16BD00E2598D /* HabitsViewController.swift */,
+			);
+			path = HabitsViewController;
+			sourceTree = "<group>";
+		};
 		58FC15FA215B9D6700BF2712 = {
 			isa = PBXGroup;
 			children = (
@@ -106,7 +116,7 @@
 		58FC161E215BA8E500BF2712 /* NewGoalViewController */ = {
 			isa = PBXGroup;
 			children = (
-				58FF9374215E64BC004FC40A /* NewGoalViewController.swift */,
+				58FF9374215E64BC004FC40A /* HabitsCategoryViewController.swift */,
 			);
 			path = NewGoalViewController;
 			sourceTree = "<group>";
@@ -121,6 +131,7 @@
 		58FF9367215E4A95004FC40A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				5885A765217E16C500E2598D /* HabitsViewController */,
 				58FC161E215BA8E500BF2712 /* NewGoalViewController */,
 				58FC161D215BA8D800BF2712 /* ActiveGoalsViewController */,
 			);
@@ -139,8 +150,8 @@
 		58FF936F215E5FD9004FC40A /* ActiveGoalCell */ = {
 			isa = PBXGroup;
 			children = (
-				585F62FD21668B5600F90F22 /* ActiveGoalCell.swift */,
-				585F62FE21668B5600F90F22 /* ActiveGoalCell.xib */,
+				587CDB6D216E1A0B007994B3 /* ActiveGoalCell.swift */,
+				587CDB6E216E1A0B007994B3 /* ActiveGoalCell.xib */,
 			);
 			path = ActiveGoalCell;
 			sourceTree = "<group>";
@@ -212,7 +223,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				585F630021668B5600F90F22 /* ActiveGoalCell.xib in Resources */,
+				587CDB70216E1A0B007994B3 /* ActiveGoalCell.xib in Resources */,
 				58FC1614215B9D6900BF2712 /* LaunchScreen.storyboard in Resources */,
 				58FF9380215EA71A004FC40A /* DynamicCell.xib in Resources */,
 				58FC1611215B9D6900BF2712 /* Assets.xcassets in Resources */,
@@ -229,10 +240,11 @@
 			files = (
 				58FF937F215EA71A004FC40A /* DynamicCell.swift in Sources */,
 				58FC160F215B9D6700BF2712 /* Modifying.xcdatamodeld in Sources */,
+				5885A764217E16BD00E2598D /* HabitsViewController.swift in Sources */,
 				58FC1609215B9D6700BF2712 /* ActiveGoalsViewController.swift in Sources */,
 				58FC1607215B9D6700BF2712 /* AppDelegate.swift in Sources */,
-				585F62FF21668B5600F90F22 /* ActiveGoalCell.swift in Sources */,
-				58FF9375215E64BC004FC40A /* NewGoalViewController.swift in Sources */,
+				587CDB6F216E1A0B007994B3 /* ActiveGoalCell.swift in Sources */,
+				58FF9375215E64BC004FC40A /* HabitsCategoryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

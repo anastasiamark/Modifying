@@ -10,44 +10,40 @@ import UIKit
 
 class ActiveGoalsViewController: UIViewController {
 
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var collectionView: UICollectionView!
     
     //MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.register(UINib(nibName: "ActiveGoalCell", bundle: nil), forCellReuseIdentifier: "ActiveGoalCell")
+        collectionView.register(UINib(nibName: "ActiveGoalCell", bundle: nil), forCellWithReuseIdentifier: "ActiveGoalCell")
+        
     }
     
     @IBAction func addNewGoal(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "AddGoal", sender: self)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "AddGoal" {
-            
-        }
-    }
-
-
 }
 
-extension ActiveGoalsViewController: UITableViewDelegate {
+extension ActiveGoalsViewController: UICollectionViewDelegate {
     
 }
 
-extension ActiveGoalsViewController: UITableViewDataSource {
+extension ActiveGoalsViewController: UICollectionViewDataSource {
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 25
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ActiveGoalCell", for: indexPath)
-        
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ActiveGoalCell", for: indexPath)
         return cell
     }
-    
-    
+}
+
+extension ActiveGoalsViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.bounds.width, height: 68)
+    }
 }
