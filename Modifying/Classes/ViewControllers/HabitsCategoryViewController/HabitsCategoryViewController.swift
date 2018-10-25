@@ -30,13 +30,13 @@ class HabitsCategoryViewController: UIViewController {
 extension HabitsCategoryViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if indexPath.row == 0  {
-            return
+            if let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: String(describing: AddEditGoalViewController.self)) as? AddEditGoalViewController {
+                vc.navigationItem.title = "Add Goal"
+                navigationController?.pushViewController(vc, animated: true)
+            }
         } else {
             if let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: "HabitsViewController") as? HabitsViewController {
-                
                 vc.activeTitle = categories[indexPath.row - 1]
-                //vc.navigationItem.title = vc.activeTitle
-                print("vc - \(vc.activeTitle)")
                 navigationController?.pushViewController(vc, animated: true)
             }
         } 

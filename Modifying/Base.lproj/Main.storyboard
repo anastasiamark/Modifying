@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Modifying-->
+        <!--ActiveGoalsViewController-->
         <scene sceneID="aeR-K0-bXf">
             <objects>
-                <viewController storyboardIdentifier="ActiveGoalsViewController" title="Modifying" id="uUN-Ye-aD8" customClass="ActiveGoalsViewController" customModule="Modifying" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ActiveGoalsViewController" title="Modifying" id="uUN-Ye-aD8" userLabel="ActiveGoalsViewController" customClass="ActiveGoalsViewController" customModule="Modifying" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YCZ-3E-2Bb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -59,10 +59,51 @@
             </objects>
             <point key="canvasLocation" x="404" y="124.58770614692655"/>
         </scene>
-        <!--Goals-->
+        <!--AddEditGoalViewController-->
+        <scene sceneID="lbr-pm-2Qa">
+            <objects>
+                <viewController storyboardIdentifier="AddEditGoalViewController" id="oqr-Wa-7kI" userLabel="AddEditGoalViewController" customClass="AddEditGoalViewController" customModule="Modifying" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2c1-bg-hRj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZwM-sy-54r">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ZsM-Xm-bkM">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="oqr-Wa-7kI" id="xke-5C-x3j"/>
+                                    <outlet property="delegate" destination="oqr-Wa-7kI" id="Cg9-me-MvP"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="er3-ya-3n8" firstAttribute="trailing" secondItem="ZwM-sy-54r" secondAttribute="trailing" id="CDF-1u-5fv"/>
+                            <constraint firstItem="er3-ya-3n8" firstAttribute="bottom" secondItem="ZwM-sy-54r" secondAttribute="bottom" id="RsS-H7-wIo"/>
+                            <constraint firstItem="ZwM-sy-54r" firstAttribute="leading" secondItem="er3-ya-3n8" secondAttribute="leading" id="qT3-JE-CHQ"/>
+                            <constraint firstItem="ZwM-sy-54r" firstAttribute="top" secondItem="er3-ya-3n8" secondAttribute="top" id="yOS-XG-mRh"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="er3-ya-3n8"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="ZwM-sy-54r" id="3Tm-Bb-mXE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aWn-hA-Lku" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="586" y="825"/>
+        </scene>
+        <!--HabitsCategoryViewController-->
         <scene sceneID="lkA-v2-8GP">
             <objects>
-                <viewController storyboardIdentifier="HabitsCategoryViewController" title="Goals" id="8NR-2L-afX" customClass="HabitsCategoryViewController" customModule="Modifying" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HabitsCategoryViewController" title="Goals" id="8NR-2L-afX" userLabel="HabitsCategoryViewController" customClass="HabitsCategoryViewController" customModule="Modifying" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mU3-YK-FjW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -91,12 +132,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hnp-Gd-I1o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1497" y="114"/>
+            <point key="canvasLocation" x="1222" y="125"/>
         </scene>
-        <!--Habits-->
+        <!--HabitsViewController-->
         <scene sceneID="dFL-hV-qP8">
             <objects>
-                <viewController storyboardIdentifier="HabitsViewController" title="Habits" id="enp-qi-1Bd" customClass="HabitsViewController" customModule="Modifying" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HabitsViewController" title="Habits" id="enp-qi-1Bd" userLabel="HabitsViewController" customClass="HabitsViewController" customModule="Modifying" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="85T-VN-y8b">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -125,7 +166,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JeI-gT-6H2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2174" y="116"/>
+            <point key="canvasLocation" x="2006" y="125"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sBy-LI-22f">

@@ -20,6 +20,7 @@ class ActiveGoalsViewController: UIViewController {
         
     }
     
+    //MARK: Actions
     @IBAction func addNewGoal(_ sender: UIBarButtonItem) {
         performSegue(withIdentifier: "AddGoal", sender: self)
     }

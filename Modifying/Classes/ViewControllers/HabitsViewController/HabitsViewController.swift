@@ -18,6 +18,7 @@ class HabitsViewController: UIViewController {
     // Standard habits for standard topics
     private let habitsForEachCategories = ["Health" : ["Eat a good meal", "Eat some fruit", "Drink some water", "Brush & floss", "Take medication", "Take vitamins", "Take a break", "Limit caffeine", "Check my posture"], "Fitness" : ["Hit the gym", "Go for a walk", "Go for a run", "Play some sport", "Go for a ride", "Go for a swim", "Yoga", "Stretching", "Crunches"], "Home" :["Water plants", "Pay bills", "Track my budget", "Make my bed", "Do the laundry", "Vacuum", "Cook dinner", "Walk the dog", "Put the bin out", "Gardening"], "Hobbies" : ["Meditate", "Read", "Cook something new", "Play an instrument", "Paint or draw", "Practice a new skill", "Watch a new film", "Write in my journal"], "Social" : ["Time with family", "Plan to see a friend", "Get out of the house", "Call mum or dad", "Say 'I love you'", "Talk to a stranger", "Plan to volunteer", "Listen more than talk"], "Efficiency" : ["Inbox zero", "Unclutter my life", "Study undistracted", "Sleep by 11pm", "Wake on time", "Write to-do list", "Practice focus", "Use Pomodoro timer"]]
     
+    //MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,6 +50,23 @@ extension HabitsViewController: UITableViewDataSource {
         }
         return cell
     }
-    
-    
+}
+
+extension HabitsViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            if let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: String(describing: AddEditGoalViewController.self)) as? AddEditGoalViewController {
+                vc.navigationItem.title = "Add Goal"
+                navigationController?.pushViewController(vc, animated: true)
+            }
+        } else {
+            if let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: String(describing: AddEditGoalViewController.self)) as? AddEditGoalViewController {
+                vc.navigationItem.title = "Add Goal"
+                if let habits = habitsForEachCategories[activeTitle] {
+                    vc.activeGoalName = habits[indexPath.row - 1]
+                }
+                navigationController?.pushViewController(vc, animated: true)
+            }
+        }
+    }
 }
