@@ -33,7 +33,6 @@ class DynamicCell: UITableViewCell {
     }
 
     //MARK: Cell Configuration Method
-    
     func configureCell(_ goalLabelText: String?, _ explanationLabelText: String?) {
         if let explanationText = explanationLabelText, let goalText = goalLabelText {
             self.useExplanationLabel = true

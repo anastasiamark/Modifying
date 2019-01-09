@@ -7,9 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		581D392F218A242C008546A5 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581D392E218A242C008546A5 /* ScheduleViewController.swift */; };
+		586CFA452194447B00EEAB29 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586CFA442194447B00EEAB29 /* UIView.swift */; };
 		587CDB6F216E1A0B007994B3 /* ActiveGoalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587CDB6D216E1A0B007994B3 /* ActiveGoalCell.swift */; };
 		587CDB70216E1A0B007994B3 /* ActiveGoalCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 587CDB6E216E1A0B007994B3 /* ActiveGoalCell.xib */; };
 		5885A764217E16BD00E2598D /* HabitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5885A763217E16BD00E2598D /* HabitsViewController.swift */; };
+		588A8E6921AC4C56006FAF53 /* ScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588A8E6721AC4C56006FAF53 /* ScheduleCell.swift */; };
+		588A8E6A21AC4C56006FAF53 /* ScheduleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 588A8E6821AC4C56006FAF53 /* ScheduleCell.xib */; };
+		588A8E6D21AD7B31006FAF53 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588A8E6C21AD7B31006FAF53 /* BaseViewController.swift */; };
+		588A8E7721ADB8F8006FAF53 /* IntervalScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588A8E7521ADB8F8006FAF53 /* IntervalScheduleViewController.swift */; };
+		588A8E7821ADB8F8006FAF53 /* IntervalScheduleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 588A8E7621ADB8F8006FAF53 /* IntervalScheduleViewController.xib */; };
+		58ABA56F21C004C300A1DE53 /* Schedules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58ABA56E21C004C300A1DE53 /* Schedules.swift */; };
+		58C25E06219DE51F00C3C59A /* MainScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C25E05219DE51F00C3C59A /* MainScheduleView.swift */; };
+		58C25E08219DF30B00C3C59A /* MainScheduleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58C25E07219DF30B00C3C59A /* MainScheduleView.xib */; };
 		58C312D52180723A00A7522B /* AddEditGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C312D42180723A00A7522B /* AddEditGoalViewController.swift */; };
 		58C312DD218076AF00A7522B /* AddEditGoalNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C312DB218076AF00A7522B /* AddEditGoalNameCell.swift */; };
 		58C312DE218076AF00A7522B /* AddEditGoalNameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58C312DC218076AF00A7522B /* AddEditGoalNameCell.xib */; };
@@ -25,9 +35,19 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		581D392E218A242C008546A5 /* ScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
+		586CFA442194447B00EEAB29 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		587CDB6D216E1A0B007994B3 /* ActiveGoalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveGoalCell.swift; sourceTree = "<group>"; };
 		587CDB6E216E1A0B007994B3 /* ActiveGoalCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActiveGoalCell.xib; sourceTree = "<group>"; };
 		5885A763217E16BD00E2598D /* HabitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsViewController.swift; sourceTree = "<group>"; };
+		588A8E6721AC4C56006FAF53 /* ScheduleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCell.swift; sourceTree = "<group>"; };
+		588A8E6821AC4C56006FAF53 /* ScheduleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScheduleCell.xib; sourceTree = "<group>"; };
+		588A8E6C21AD7B31006FAF53 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		588A8E7521ADB8F8006FAF53 /* IntervalScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalScheduleViewController.swift; sourceTree = "<group>"; };
+		588A8E7621ADB8F8006FAF53 /* IntervalScheduleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IntervalScheduleViewController.xib; sourceTree = "<group>"; };
+		58ABA56E21C004C300A1DE53 /* Schedules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedules.swift; sourceTree = "<group>"; };
+		58C25E05219DE51F00C3C59A /* MainScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScheduleView.swift; sourceTree = "<group>"; };
+		58C25E07219DF30B00C3C59A /* MainScheduleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainScheduleView.xib; sourceTree = "<group>"; };
 		58C312D42180723A00A7522B /* AddEditGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditGoalViewController.swift; sourceTree = "<group>"; };
 		58C312DB218076AF00A7522B /* AddEditGoalNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditGoalNameCell.swift; sourceTree = "<group>"; };
 		58C312DC218076AF00A7522B /* AddEditGoalNameCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddEditGoalNameCell.xib; sourceTree = "<group>"; };
@@ -55,12 +75,87 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		581D392D21887922008546A5 /* ScheduleViewController */ = {
+			isa = PBXGroup;
+			children = (
+				581D392E218A242C008546A5 /* ScheduleViewController.swift */,
+			);
+			path = ScheduleViewController;
+			sourceTree = "<group>";
+		};
+		586CFA3E219439DD00EEAB29 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				58C25E02219DE49000C3C59A /* MainScheduleView */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		586CFA4221943E0100EEAB29 /* Extentions */ = {
+			isa = PBXGroup;
+			children = (
+				586CFA4321943E1600EEAB29 /* UIViewExtention */,
+			);
+			path = Extentions;
+			sourceTree = "<group>";
+		};
+		586CFA4321943E1600EEAB29 /* UIViewExtention */ = {
+			isa = PBXGroup;
+			children = (
+				586CFA442194447B00EEAB29 /* UIView.swift */,
+			);
+			path = UIViewExtention;
+			sourceTree = "<group>";
+		};
 		5885A765217E16C500E2598D /* HabitsViewController */ = {
 			isa = PBXGroup;
 			children = (
 				5885A763217E16BD00E2598D /* HabitsViewController.swift */,
 			);
 			path = HabitsViewController;
+			sourceTree = "<group>";
+		};
+		588A8E6621AC4B67006FAF53 /* ScheduleCell */ = {
+			isa = PBXGroup;
+			children = (
+				588A8E6721AC4C56006FAF53 /* ScheduleCell.swift */,
+				588A8E6821AC4C56006FAF53 /* ScheduleCell.xib */,
+			);
+			path = ScheduleCell;
+			sourceTree = "<group>";
+		};
+		588A8E6B21AD7AF9006FAF53 /* BaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				588A8E6C21AD7B31006FAF53 /* BaseViewController.swift */,
+			);
+			path = BaseViewController;
+			sourceTree = "<group>";
+		};
+		588A8E7421ADB6E4006FAF53 /* IntervalScheduleViewController */ = {
+			isa = PBXGroup;
+			children = (
+				588A8E7521ADB8F8006FAF53 /* IntervalScheduleViewController.swift */,
+				588A8E7621ADB8F8006FAF53 /* IntervalScheduleViewController.xib */,
+			);
+			path = IntervalScheduleViewController;
+			sourceTree = "<group>";
+		};
+		58ABA56D21C0044600A1DE53 /* Schedules */ = {
+			isa = PBXGroup;
+			children = (
+				58ABA56E21C004C300A1DE53 /* Schedules.swift */,
+			);
+			path = Schedules;
+			sourceTree = "<group>";
+		};
+		58C25E02219DE49000C3C59A /* MainScheduleView */ = {
+			isa = PBXGroup;
+			children = (
+				58C25E07219DF30B00C3C59A /* MainScheduleView.xib */,
+				58C25E05219DE51F00C3C59A /* MainScheduleView.swift */,
+			);
+			path = MainScheduleView;
 			sourceTree = "<group>";
 		};
 		58C312D32180711600A7522B /* AddEditGoalViewController */ = {
@@ -113,6 +208,8 @@
 		58FC161B215BA7C600BF2712 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				586CFA4221943E0100EEAB29 /* Extentions */,
+				586CFA3E219439DD00EEAB29 /* Views */,
 				58FF9368215E570E004FC40A /* Cells */,
 				58FF9367215E4A95004FC40A /* ViewControllers */,
 				58FF9363215D51AB004FC40A /* Models */,
@@ -147,6 +244,7 @@
 		58FF9363215D51AB004FC40A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				58ABA56D21C0044600A1DE53 /* Schedules */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -154,6 +252,9 @@
 		58FF9367215E4A95004FC40A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				588A8E7421ADB6E4006FAF53 /* IntervalScheduleViewController */,
+				588A8E6B21AD7AF9006FAF53 /* BaseViewController */,
+				581D392D21887922008546A5 /* ScheduleViewController */,
 				58C312D32180711600A7522B /* AddEditGoalViewController */,
 				5885A765217E16C500E2598D /* HabitsViewController */,
 				58FC161E215BA8E500BF2712 /* HabitsCategoryViewController */,
@@ -165,6 +266,7 @@
 		58FF9368215E570E004FC40A /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				588A8E6621AC4B67006FAF53 /* ScheduleCell */,
 				58C312D6218074CF00A7522B /* AddEditeGoalNameCell */,
 				58FF937C215EA025004FC40A /* DynamicCell */,
 				58FF936F215E5FD9004FC40A /* ActiveGoalCell */,
@@ -248,12 +350,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				588A8E6A21AC4C56006FAF53 /* ScheduleCell.xib in Resources */,
 				587CDB70216E1A0B007994B3 /* ActiveGoalCell.xib in Resources */,
+				58C25E08219DF30B00C3C59A /* MainScheduleView.xib in Resources */,
 				58FC1614215B9D6900BF2712 /* LaunchScreen.storyboard in Resources */,
 				58FF9380215EA71A004FC40A /* DynamicCell.xib in Resources */,
 				58C312DE218076AF00A7522B /* AddEditGoalNameCell.xib in Resources */,
 				58FC1611215B9D6900BF2712 /* Assets.xcassets in Resources */,
 				58FC160C215B9D6700BF2712 /* Main.storyboard in Resources */,
+				588A8E7821ADB8F8006FAF53 /* IntervalScheduleViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,12 +369,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				588A8E7721ADB8F8006FAF53 /* IntervalScheduleViewController.swift in Sources */,
 				58C312D52180723A00A7522B /* AddEditGoalViewController.swift in Sources */,
 				58FF937F215EA71A004FC40A /* DynamicCell.swift in Sources */,
+				586CFA452194447B00EEAB29 /* UIView.swift in Sources */,
+				588A8E6D21AD7B31006FAF53 /* BaseViewController.swift in Sources */,
 				58FC160F215B9D6700BF2712 /* Modifying.xcdatamodeld in Sources */,
 				5885A764217E16BD00E2598D /* HabitsViewController.swift in Sources */,
 				58C312DD218076AF00A7522B /* AddEditGoalNameCell.swift in Sources */,
+				581D392F218A242C008546A5 /* ScheduleViewController.swift in Sources */,
+				58C25E06219DE51F00C3C59A /* MainScheduleView.swift in Sources */,
+				58ABA56F21C004C300A1DE53 /* Schedules.swift in Sources */,
 				58FC1609215B9D6700BF2712 /* ActiveGoalsViewController.swift in Sources */,
+				588A8E6921AC4C56006FAF53 /* ScheduleCell.swift in Sources */,
 				58FC1607215B9D6700BF2712 /* AppDelegate.swift in Sources */,
 				587CDB6F216E1A0B007994B3 /* ActiveGoalCell.swift in Sources */,
 				58FF9375215E64BC004FC40A /* HabitsCategoryViewController.swift in Sources */,
