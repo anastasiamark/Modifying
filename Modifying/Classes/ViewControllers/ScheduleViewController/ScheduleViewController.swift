@@ -29,7 +29,7 @@ class ScheduleViewController: UIViewController {
             case 2:
                 visibleContentVC = monthlyScheduleVC
             default:
-                print("\(String(describing: visibleContentVC))")
+                print("ScheduleViewController| Default segmented index: \(scheduleSegmentedControl.selectedSegmentIndex)")
             }
         }
     }
@@ -54,16 +54,16 @@ class ScheduleViewController: UIViewController {
         
         switch scheduleSegmentedControl.selectedSegmentIndex {
         case 0:
-            print("DAILY")
+            print("ScheduleViewController| DAILY")
             displayContentController(content: dailyScheduleVC, for: containerView)
         case 1:
-            print("WEEKLY")
+            print("ScheduleViewController| WEEKLY")
             displayContentController(content: weeklyScheduleVC, for: containerView)
         case 2:
-            print("MONTHLY")
+            print("ScheduleViewController| MONTHLY")
             displayContentController(content: monthlyScheduleVC, for: containerView)
         default:
-            print("DEFAULT")
+            print("ScheduleViewController| DEFAULT")
         }
         
         self.visibleContentVC?.collectionView.reloadData()
@@ -95,7 +95,7 @@ class ScheduleViewController: UIViewController {
         dailyScheduleVC.configureVCWith(.daily)
         weeklyScheduleVC.configureVCWith(.weekly)
         monthlyScheduleVC.configureVCWith(.monthly)
-        timeScheduleVC.configureVCWith(.partOfTheDay)
+        timeScheduleVC.configureVCWith(.partOfDay)
         visibleContentVC = IntervalScheduleViewController()
         displayContentController(content: visibleContentVC!, for: containerView)
         displayContentController(content: timeScheduleVC, for: timeScheduleContainerView)

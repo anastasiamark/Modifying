@@ -8,20 +8,23 @@
 
 import Foundation
 
-protocol OptionsForTheSchedule {
-    func all() -> [String]
-    func selected() -> [String]?
+protocol Schedule {
+    var type: ScheduleType { get }
+    var title: String { get set }
+    var scheduleItems: [ScheduleItem] { get set }
+    
+    init()
 }
 
 enum ScheduleType {
-    case partOfTheDay
+    case partOfDay
     case daily
     case monthly
     case weekly
 }
 
 enum ScheduleFactory {
-    static func options(for scheduleType: ScheduleType) -> OptionsForTheSchedule? {
+    static func options(for scheduleType: ScheduleType) -> Schedule? {
         switch scheduleType {
         case .daily:
             return DailySchedule()
@@ -29,53 +32,61 @@ enum ScheduleFactory {
             return WeeklySchedule()
         case .monthly:
             return MonthlySchedule()
-        case .partOfTheDay:
+        case .partOfDay:
             return PartOfTheDaySchedule()
         }
     }
 }
 
-class DailySchedule: OptionsForTheSchedule {
-    private let dailyData = ["M", "T", "W", "T", "F", "S", "S", "Every day"]
-    func all() -> [String] {
-        return dailyData
-    }
+class DailySchedule: Schedule {
+    var type = ScheduleType.daily
+    var title: String = "on these days"
+    var scheduleItems: [ScheduleItem]
     
-    func selected() -> [String]? {
-        return [dailyData.last!]
+    private let titles = ["M", "T", "W", "T", "F", "S", "S", "Every day"]
+    
+    required init() {
+        let scheduleItems = ScheduleItemFactory.scheduleItems(for: type, with: titles)
+        self.scheduleItems = scheduleItems as! [ScheduleItem]
     }
     
 }
 
-class WeeklySchedule: OptionsForTheSchedule {
-    private let weeklyData = ["1", "2", "3", "4", "5", "6", "once every two weeks"]
-    func all() -> [String] {
-        return weeklyData
-    }
+class WeeklySchedule: Schedule {
+    var type = ScheduleType.weekly
+    var title: String = "some days a week"
+    var scheduleItems: [ScheduleItem]
     
-    func selected() -> [String]? {
-        return [weeklyData.last!]
+    private let titles = ["1", "2", "3", "4", "5", "6", "once every two weeks"]
+    
+    required init() {
+        let scheduleItems = ScheduleItemFactory.scheduleItems(for: type, with: titles)
+        self.scheduleItems = scheduleItems as! [ScheduleItem]
     }
 }
 
-class MonthlySchedule: OptionsForTheSchedule {
-    private let monthlyData = ["start", "middle", "end", "whole month"]
-    func all() -> [String] {
-        return monthlyData
-    }
+class MonthlySchedule: Schedule {
+    var type = ScheduleType.monthly
+    var title: String = "at this time of month"
+    var scheduleItems: [ScheduleItem]
     
-    func selected() -> [String]? {
-        return [monthlyData.last!]
+    private let titles = ["start", "middle", "end", "whole month"]
+    
+    required init() {
+        let scheduleItems = ScheduleItemFactory.scheduleItems(for: type, with: titles)
+        self.scheduleItems = scheduleItems as! [ScheduleItem]
     }
 }
 
-class PartOfTheDaySchedule: OptionsForTheSchedule {
-    private let partOfTheDayData = ["morning", "afteroon", "evening", "onceAtAnyTime"]
-    func all() -> [String] {
-        return partOfTheDayData
-    }
+class PartOfTheDaySchedule: Schedule {
+    var type = ScheduleType.partOfDay
+    var title: String = "I will do it in the"
+    var scheduleItems: [ScheduleItem]
     
-    func selected() -> [String]? {
-        return [partOfTheDayData.last!]
+    private let titles = ["morning", "afteroon", "evening", "onceAtAnyTime"]
+    
+    required init() {
+        let scheduleItems = ScheduleItemFactory.scheduleItems(for: type, with: titles)
+        self.scheduleItems = scheduleItems as! [ScheduleItem]
     }
 }

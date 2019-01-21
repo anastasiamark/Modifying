@@ -17,6 +17,7 @@
 		588A8E6D21AD7B31006FAF53 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588A8E6C21AD7B31006FAF53 /* BaseViewController.swift */; };
 		588A8E7721ADB8F8006FAF53 /* IntervalScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588A8E7521ADB8F8006FAF53 /* IntervalScheduleViewController.swift */; };
 		588A8E7821ADB8F8006FAF53 /* IntervalScheduleViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 588A8E7621ADB8F8006FAF53 /* IntervalScheduleViewController.xib */; };
+		588F8AA321F0874000C999EB /* ScheduleItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588F8AA221F0874000C999EB /* ScheduleItem.swift */; };
 		58ABA56F21C004C300A1DE53 /* Schedules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58ABA56E21C004C300A1DE53 /* Schedules.swift */; };
 		58C25E06219DE51F00C3C59A /* MainScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C25E05219DE51F00C3C59A /* MainScheduleView.swift */; };
 		58C25E08219DF30B00C3C59A /* MainScheduleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58C25E07219DF30B00C3C59A /* MainScheduleView.xib */; };
@@ -45,6 +46,7 @@
 		588A8E6C21AD7B31006FAF53 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		588A8E7521ADB8F8006FAF53 /* IntervalScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntervalScheduleViewController.swift; sourceTree = "<group>"; };
 		588A8E7621ADB8F8006FAF53 /* IntervalScheduleViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IntervalScheduleViewController.xib; sourceTree = "<group>"; };
+		588F8AA221F0874000C999EB /* ScheduleItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleItem.swift; sourceTree = "<group>"; };
 		58ABA56E21C004C300A1DE53 /* Schedules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Schedules.swift; sourceTree = "<group>"; };
 		58C25E05219DE51F00C3C59A /* MainScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainScheduleView.swift; sourceTree = "<group>"; };
 		58C25E07219DF30B00C3C59A /* MainScheduleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainScheduleView.xib; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				58ABA56E21C004C300A1DE53 /* Schedules.swift */,
+				588F8AA221F0874000C999EB /* ScheduleItem.swift */,
 			);
 			path = Schedules;
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 				58C312DD218076AF00A7522B /* AddEditGoalNameCell.swift in Sources */,
 				581D392F218A242C008546A5 /* ScheduleViewController.swift in Sources */,
 				58C25E06219DE51F00C3C59A /* MainScheduleView.swift in Sources */,
+				588F8AA321F0874000C999EB /* ScheduleItem.swift in Sources */,
 				58ABA56F21C004C300A1DE53 /* Schedules.swift in Sources */,
 				58FC1609215B9D6700BF2712 /* ActiveGoalsViewController.swift in Sources */,
 				588A8E6921AC4C56006FAF53 /* ScheduleCell.swift in Sources */,
