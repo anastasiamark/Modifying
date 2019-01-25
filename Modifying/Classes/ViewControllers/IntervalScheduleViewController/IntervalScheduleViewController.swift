@@ -13,6 +13,10 @@ class IntervalScheduleViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     
+    private var chosenIndexes = IndexSet()
+    private var defaultChosenIndex : Int {
+        return (activeSchedule?.scheduleItems.count ?? 1) - 1
+    }
     private let scheduleCellReuseIdentifier = String(describing: ScheduleCell.self)
     private var activeSchedulType = ScheduleType.daily
     private var activeSchedule: Schedule?
@@ -45,16 +49,77 @@ class IntervalScheduleViewController: UIViewController {
 }
 
 extension IntervalScheduleViewController: UICollectionViewDelegate {
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let cell = collectionView.cellForItem(at: indexPath) as! ScheduleCell
         
-        collectionView.reloadData()
+        let idx = indexPath.row
+                
+            if chosenIndexes.contains(idx) {
+                chosenIndexes.remove(idx)
+                settingIndicesSelection(selectedIndex: idx)
+                print(chosenIndexes.description)
+            } else {
+                chosenIndexes.insert(idx)
+                settingIndicesSelection(selectedIndex: idx)
+                print(chosenIndexes.description)
+            }
+        
+        self.collectionView.reloadSections([0])
     }
+    
+    private func settingIndicesSelection(selectedIndex: Int) {
+        
+        chosenIndexes.remove(defaultChosenIndex)
+        guard let scheduleType = activeSchedule?.type else {
+            return
+        }
+        
+        switch scheduleType {
+        case .daily:
+
+            if selectedIndex == defaultChosenIndex && chosenIndexes.count >= 1 {
+                chosenIndexes.removeAll()
+                chosenIndexes.insert(defaultChosenIndex)
+            } else if chosenIndexes.contains(defaultChosenIndex) {
+                chosenIndexes.remove(defaultChosenIndex)
+            }
+            
+            if chosenIndexes.isEmpty {
+                chosenIndexes.insert(defaultChosenIndex)
+            }
+            
+            if chosenIndexes.contains(integersIn: IndexSet(integersIn: 0...defaultChosenIndex - 1)) {
+                chosenIndexes.remove(integersIn: 0...defaultChosenIndex - 1)
+                chosenIndexes.update(with: defaultChosenIndex)
+            }
+        case .weekly:
+            simpleIndexSelection(selectedIndex)
+        case .monthly:
+            simpleIndexSelection(selectedIndex)
+        case .partOfDay:
+            simpleIndexSelection(selectedIndex)
+        }
+    }
+    
+    private func simpleIndexSelection(_ selectedIndex: Int) {
+        if chosenIndexes.isEmpty {
+            chosenIndexes.insert(defaultChosenIndex)
+            return
+        }
+        
+        let lastAddedIndex = selectedIndex
+        chosenIndexes.removeAll()
+        chosenIndexes.insert(lastAddedIndex)
+    }
+    
 }
 
 extension IntervalScheduleViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if chosenIndexes.isEmpty {
+            chosenIndexes.insert(defaultChosenIndex)
+        }
         return activeSchedule?.scheduleItems.count ?? 1
     }
     
@@ -62,8 +127,7 @@ extension IntervalScheduleViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: scheduleCellReuseIdentifier, for: indexPath) as! ScheduleCell
         if let scheduleItems = activeSchedule?.scheduleItems {
             let scheduleItem = scheduleItems[indexPath.item]
-            print("IntervalScheduleViewController| chosenOptions:)")
-            cell.configureCell(scheduleItem.title, true)
+            cell.configureCell(scheduleItem.title, chosenIndexes.contains(indexPath.row))
         }
         return cell
     }

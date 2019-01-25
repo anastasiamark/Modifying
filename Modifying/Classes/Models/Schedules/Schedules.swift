@@ -49,7 +49,7 @@ class DailySchedule: Schedule {
         let scheduleItems = ScheduleItemFactory.scheduleItems(for: type, with: titles)
         self.scheduleItems = scheduleItems as! [ScheduleItem]
     }
-    
+        
 }
 
 class WeeklySchedule: Schedule {
@@ -69,7 +69,7 @@ class MonthlySchedule: Schedule {
     var type = ScheduleType.monthly
     var title: String = "at this time of month"
     var scheduleItems: [ScheduleItem]
-    
+
     private let titles = ["start", "middle", "end", "whole month"]
     
     required init() {
@@ -82,7 +82,7 @@ class PartOfTheDaySchedule: Schedule {
     var type = ScheduleType.partOfDay
     var title: String = "I will do it in the"
     var scheduleItems: [ScheduleItem]
-    
+
     private let titles = ["morning", "afteroon", "evening", "onceAtAnyTime"]
     
     required init() {
