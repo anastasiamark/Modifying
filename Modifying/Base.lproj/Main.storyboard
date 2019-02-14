@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GHK-l3-P0o" userLabel="Active Goal Collection View">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="GHK-l3-P0o" userLabel="Active Goal Collection View">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ccO-sA-hAi">
@@ -51,7 +51,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="collectionView" destination="GHK-l3-P0o" id="rdZ-5w-dZm"/>
+                        <outlet property="collectionView" destination="GHK-l3-P0o" id="qnF-Bh-fFb"/>
                         <segue destination="8NR-2L-afX" kind="show" identifier="AddGoal" id="MB9-oL-4dg"/>
                     </connections>
                 </viewController>
@@ -162,9 +162,11 @@
                         <outlet property="containerView" destination="GmU-Va-M7B" id="HnO-hb-Xtt"/>
                         <outlet property="scheduleSegmentedControl" destination="3Sn-zM-kqa" id="a0z-4W-LgF"/>
                         <outlet property="timeScheduleContainerView" destination="pYV-mb-hjL" id="Dct-wP-Nax"/>
+                        <segue destination="7OV-xE-5yX" kind="unwind" identifier="toActiveGoalVCSegueIdentifier" unwindAction="unwindToActiveGoalVCWithSegue:" id="tS5-il-Lna"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="whq-K4-wTs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="7OV-xE-5yX" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1304.8" y="823.53823088455783"/>
         </scene>

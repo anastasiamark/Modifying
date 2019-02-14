@@ -71,7 +71,8 @@ class ScheduleViewController: UIViewController {
     
     //MARK: Private Functions
     @objc private func createActiveGoal() {
-        navigationController?.popToRootViewController(animated: true)
+        performSegue(withIdentifier: "toActiveGoalVCSegueIdentifier", sender: self)
+        
     }
     
     private func displayContentController(content: IntervalScheduleViewController, for container: UIView) {

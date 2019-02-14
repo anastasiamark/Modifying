@@ -22,9 +22,7 @@ class ScheduleCell: UICollectionViewCell {
 
     //MARK: Cell Configuration Method
     func configureCell(_ withText: String?, _ isChosen: Bool) {
-        
-        self.label.text = withText
-        
+        label.text = withText
         configureCellSelection(isChosen)
     }
     

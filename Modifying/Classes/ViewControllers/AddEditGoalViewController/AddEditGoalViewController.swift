@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MagicalRecord
 
 class AddEditGoalViewController: UIViewController {
 
@@ -20,12 +21,24 @@ class AddEditGoalViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // TODO: put into appropriate method
         collectionView.register(UINib(nibName: addEditGoalNameCellReuseIdentifier, bundle: nil), forCellWithReuseIdentifier: addEditGoalNameCellReuseIdentifier)
         navigationItem.setRightBarButton(UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneSetupForGoal)), animated: true)
     }
     
     @objc private func doneSetupForGoal() {
+        guard let activeGoalName = activeGoalName else {
+            return
+        }
+        
+        MagicalRecord.save ({ (localContext) in
+            let storedGoal = StoredGoal.mr_createEntity(in: localContext) as! StoredGoal
+            storedGoal.isDone = false
+            storedGoal.name = activeGoalName
+        })
+        
         if let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: String(describing: ScheduleViewController.self)) as? ScheduleViewController {
+            
             navigationController?.pushViewController(vc, animated: true)
         }
     }

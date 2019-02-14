@@ -24,6 +24,7 @@
 		58C312D52180723A00A7522B /* AddEditGoalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C312D42180723A00A7522B /* AddEditGoalViewController.swift */; };
 		58C312DD218076AF00A7522B /* AddEditGoalNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C312DB218076AF00A7522B /* AddEditGoalNameCell.swift */; };
 		58C312DE218076AF00A7522B /* AddEditGoalNameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58C312DC218076AF00A7522B /* AddEditGoalNameCell.xib */; };
+		58F61B47220CB5E100022708 /* CoreDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58F61B46220CB5E100022708 /* CoreDataViewController.swift */; };
 		58FC1607215B9D6700BF2712 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FC1606215B9D6700BF2712 /* AppDelegate.swift */; };
 		58FC1609215B9D6700BF2712 /* ActiveGoalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FC1608215B9D6700BF2712 /* ActiveGoalsViewController.swift */; };
 		58FC160C215B9D6700BF2712 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58FC160A215B9D6700BF2712 /* Main.storyboard */; };
@@ -56,6 +57,7 @@
 		58C312D42180723A00A7522B /* AddEditGoalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditGoalViewController.swift; sourceTree = "<group>"; };
 		58C312DB218076AF00A7522B /* AddEditGoalNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEditGoalNameCell.swift; sourceTree = "<group>"; };
 		58C312DC218076AF00A7522B /* AddEditGoalNameCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddEditGoalNameCell.xib; sourceTree = "<group>"; };
+		58F61B46220CB5E100022708 /* CoreDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataViewController.swift; sourceTree = "<group>"; };
 		58FC1603215B9D6700BF2712 /* Modifying.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Modifying.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		58FC1606215B9D6700BF2712 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		58FC1608215B9D6700BF2712 /* ActiveGoalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveGoalsViewController.swift; sourceTree = "<group>"; };
@@ -183,6 +185,14 @@
 			path = AddEditeGoalNameCell;
 			sourceTree = "<group>";
 		};
+		58F61B45220CB5D100022708 /* CoreDataViewController */ = {
+			isa = PBXGroup;
+			children = (
+				58F61B46220CB5E100022708 /* CoreDataViewController.swift */,
+			);
+			path = CoreDataViewController;
+			sourceTree = "<group>";
+		};
 		58FC15FA215B9D6700BF2712 = {
 			isa = PBXGroup;
 			children = (
@@ -262,6 +272,7 @@
 		58FF9367215E4A95004FC40A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				58F61B45220CB5D100022708 /* CoreDataViewController */,
 				588A8E7421ADB6E4006FAF53 /* IntervalScheduleViewController */,
 				588A8E6B21AD7AF9006FAF53 /* BaseViewController */,
 				581D392D21887922008546A5 /* ScheduleViewController */,
@@ -446,6 +457,7 @@
 				5885A764217E16BD00E2598D /* HabitsViewController.swift in Sources */,
 				58C312DD218076AF00A7522B /* AddEditGoalNameCell.swift in Sources */,
 				581D392F218A242C008546A5 /* ScheduleViewController.swift in Sources */,
+				58F61B47220CB5E100022708 /* CoreDataViewController.swift in Sources */,
 				58C25E06219DE51F00C3C59A /* MainScheduleView.swift in Sources */,
 				588F8AA321F0874000C999EB /* ScheduleItem.swift in Sources */,
 				58ABA56F21C004C300A1DE53 /* Schedules.swift in Sources */,

@@ -28,7 +28,7 @@ enum ScheduleItemFactory {
             return PartOfDayItem(title)
         }
     }
-    static func scheduleItems(for scheduleType: ScheduleType, with titles: [String]) -> [ScheduleItem?] {
+    static func scheduleItems(for scheduleType: ScheduleType, with titles: [String]) -> [ScheduleItem] {
         var array: [ScheduleItem] = []
         switch scheduleType {
         case .daily:

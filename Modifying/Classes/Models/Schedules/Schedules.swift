@@ -47,7 +47,7 @@ class DailySchedule: Schedule {
     
     required init() {
         let scheduleItems = ScheduleItemFactory.scheduleItems(for: type, with: titles)
-        self.scheduleItems = scheduleItems as! [ScheduleItem]
+        self.scheduleItems = scheduleItems as [ScheduleItem]
     }
         
 }
@@ -61,7 +61,7 @@ class WeeklySchedule: Schedule {
     
     required init() {
         let scheduleItems = ScheduleItemFactory.scheduleItems(for: type, with: titles)
-        self.scheduleItems = scheduleItems as! [ScheduleItem]
+        self.scheduleItems = scheduleItems as [ScheduleItem]
     }
 }
 
@@ -74,7 +74,7 @@ class MonthlySchedule: Schedule {
     
     required init() {
         let scheduleItems = ScheduleItemFactory.scheduleItems(for: type, with: titles)
-        self.scheduleItems = scheduleItems as! [ScheduleItem]
+        self.scheduleItems = scheduleItems as [ScheduleItem]
     }
 }
 
@@ -87,6 +87,6 @@ class PartOfTheDaySchedule: Schedule {
     
     required init() {
         let scheduleItems = ScheduleItemFactory.scheduleItems(for: type, with: titles)
-        self.scheduleItems = scheduleItems as! [ScheduleItem]
+        self.scheduleItems = scheduleItems as [ScheduleItem]
     }
 }

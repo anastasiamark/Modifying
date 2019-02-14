@@ -1,4 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="17G3025" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="StoredGoal" representedClassName="StoredGoal" syncable="YES" codeGenerationType="class">
+        <attribute name="isDone" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="schedule" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="StoredSchedule" inverseName="goal" inverseEntity="StoredSchedule" syncable="YES"/>
+    </entity>
+    <entity name="StoredSchedule" representedClassName="StoredSchedule" syncable="YES" codeGenerationType="class">
+        <attribute name="type" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <relationship name="activeScheduleItems" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="StoredScheduleItem" inverseName="schedule" inverseEntity="StoredScheduleItem" syncable="YES"/>
+        <relationship name="goal" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="StoredGoal" inverseName="schedule" inverseEntity="StoredGoal" syncable="YES"/>
+    </entity>
+    <entity name="StoredScheduleItem" representedClassName="StoredScheduleItem" syncable="YES" codeGenerationType="class">
+        <attribute name="isActive" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="schedule" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="StoredSchedule" inverseName="activeScheduleItems" inverseEntity="StoredSchedule" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="StoredGoal" positionX="-55.45703125" positionY="53.87109375" width="128" height="90"/>
+        <element name="StoredSchedule" positionX="108.62109375" positionY="163.48046875" width="128" height="90"/>
+        <element name="StoredScheduleItem" positionX="277.82421875" positionY="275.4375" width="128" height="90"/>
+    </elements>
 </model>
