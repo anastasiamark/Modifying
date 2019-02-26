@@ -7,5 +7,6 @@ target 'Modifying' do
 
   # Pods for Modifying
 pod "MagicalRecord"
+pod "SwipeCellKit"
 
 end

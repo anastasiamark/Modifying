@@ -6,14 +6,13 @@
 //  Copyright © 2018 AnastasiaMark. All rights reserved.
 //
 
-import UIKit
+import SwipeCellKit
 
-class ActiveGoalCell: UICollectionViewCell {
+class ActiveGoalCell: SwipeCollectionViewCell {
 
-    
-    @IBOutlet weak var goalIconImageView: UIImageView!
+    @IBOutlet var goalIconImageView: UIImageView!
     @IBOutlet weak var statusIconImageView: UIImageView!
     @IBOutlet weak var goalLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
-    
+
 }
