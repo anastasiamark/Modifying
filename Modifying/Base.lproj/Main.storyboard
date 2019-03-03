@@ -51,7 +51,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="collectionView" destination="GHK-l3-P0o" id="qnF-Bh-fFb"/>
+                        <outlet property="collectionView" destination="GHK-l3-P0o" id="MMa-vu-mds"/>
                         <segue destination="8NR-2L-afX" kind="show" identifier="AddGoal" id="MB9-oL-4dg"/>
                     </connections>
                 </viewController>

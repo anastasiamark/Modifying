@@ -9,179 +9,105 @@
 import MagicalRecord
 import UIKit
 
-class CoreDataViewController: UIViewController, NSFetchedResultsControllerDelegate {
+class CoreDataViewController: UIViewController {
     
-//    @IBOutlet weak var collectionView: UICollectionView!
-    private var collectionView: UICollectionView!
-    // MARK: - Private
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    var fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.initializeFetchedResultsController()
+    }
+    
+    func initializeFetchedResultsController() {
+        
+        self.fetchedResultsController = self.createFetchedResultsController()
+        self.fetchedResultsController?.delegate = self
+        
+        if let frc = self.fetchedResultsController {
+            do {
+                try frc.performFetch()
+            } catch {
+                fatalError("Failed to initialize FetchedResultsController: \(error)")
+            }
+        }
+    }
+    
+    internal func createFetchedResultsController() -> NSFetchedResultsController<NSFetchRequestResult>? {
+        return nil
+    }
+    
+    internal func cellIdentifier() -> String {
+        return "cellIdentifier"
+    }
+    
+    internal func configureCell(cell: UICollectionViewCell, at indexPath: IndexPath) {
+        // Override in subclasses
+    }
+}
 
-    var fetchRequest: NSFetchRequest<NSFetchRequestResult>!
+extension CoreDataViewController: UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return self.fetchedResultsController?.sections?.count ?? 0
+    }
     
-    var shouldReloadCollectionView = false
-    private var _fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>? = nil
-    var blockOperations: [BlockOperation] = []
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        guard let sections = fetchedResultsController?.sections else {
+            fatalError("No sections in fetchedResultsController")
+        }
+        let sectionInfo = sections[section]
+        return sectionInfo.numberOfObjects
+    }
     
-    open var fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult> {
-        if _fetchedResultsController != nil {
-            return _fetchedResultsController!
-        }
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: self.cellIdentifier(), for: indexPath)
+        // Set up the cell
+//        guard let object = self.fetchedResultsController?.object(at: indexPath) else {
+//            fatalError("Attempt to configure cell without a managed object")
+//        }
+        //Populate the cell from the object
         
-        let managedObjectContext = NSManagedObjectContext.mr_default()
+        self.configureCell(cell: cell, at: indexPath)
         
-        let resultsController = NSFetchedResultsController(fetchRequest: self.fetchRequest, managedObjectContext: managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
-        
-        resultsController.delegate = self;
-        _fetchedResultsController = resultsController 
-        
-        do {
-            try _fetchedResultsController!.performFetch()
-        } catch {
-            let nserror = error as NSError
-            fatalError("Unresolved error \(nserror)")
-        }
-        return _fetchedResultsController!
+        return cell
+    }
+}
+
+extension CoreDataViewController: NSFetchedResultsControllerDelegate {
+    
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+//        collectionView.
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
+//        switch type {
+//        case .insert:
+//            collectionView.insertSections(IndexSet(integer: sectionIndex), with: .fade)
+//        case .delete:
+//            collectionView.deleteSections(IndexSet(integer: sectionIndex), with: .fade)
+//        case .move:
+//            break
+//        case .update:
+//            break
+//        }
     }
     
     func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
-        
-        if type == NSFetchedResultsChangeType.insert {
-            print("Insert Object: \(String(describing: newIndexPath))")
-            
-            if (collectionView?.numberOfSections)! > 0 {
-                
-                if collectionView?.numberOfItems( inSection: newIndexPath!.section ) == 0 {
-                    self.shouldReloadCollectionView = true
-                } else {
-                    blockOperations.append(
-                        BlockOperation(block: { [weak self] in
-                            if let this = self {
-                                DispatchQueue.main.async {
-                                    this.collectionView!.insertItems(at: [newIndexPath!])
-                                }
-                            }
-                        })
-                    )
-                }
-                
-            } else {
-                self.shouldReloadCollectionView = true
-            }
-        }
-        else if type == NSFetchedResultsChangeType.update {
-            print("Update Object: \(String(describing: indexPath))")
-            blockOperations.append(
-                BlockOperation(block: { [weak self] in
-                    if let this = self {
-                        DispatchQueue.main.async {
-                            
-                            this.collectionView!.reloadItems(at: [indexPath!])
-                        }
-                    }
-                })
-            )
-        }
-        else if type == NSFetchedResultsChangeType.move {
-            print("Move Object: \(String(describing: indexPath))")
-            
-            blockOperations.append(
-                BlockOperation(block: { [weak self] in
-                    if let this = self {
-                        DispatchQueue.main.async {
-                            this.collectionView!.moveItem(at: indexPath!, to: newIndexPath!)
-                        }
-                    }
-                })
-            )
-        }
-        else if type == NSFetchedResultsChangeType.delete {
-            print("Delete Object: \(String(describing: indexPath))")
-            if collectionView?.numberOfItems( inSection: indexPath!.section ) == 1 {
-                self.shouldReloadCollectionView = true
-            } else {
-                blockOperations.append(
-                    BlockOperation(block: { [weak self] in
-                        if let this = self {
-                            DispatchQueue.main.async {
-                                this.collectionView!.deleteItems(at: [indexPath!])
-                            }
-                        }
-                    })
-                )
-            }
-        }
-    }
-    
-    public func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange sectionInfo: NSFetchedResultsSectionInfo, atSectionIndex sectionIndex: Int, for type: NSFetchedResultsChangeType) {
-        if type == NSFetchedResultsChangeType.insert {
-            print("Insert Section: \(sectionIndex)")
-            blockOperations.append(
-                BlockOperation(block: { [weak self] in
-                    if let this = self {
-                        DispatchQueue.main.async {
-                            this.collectionView!.insertSections(NSIndexSet(index: sectionIndex) as IndexSet)
-                        }
-                    }
-                })
-            )
-        }
-        else if type == NSFetchedResultsChangeType.update {
-            print("Update Section: \(sectionIndex)")
-            blockOperations.append(
-                BlockOperation(block: { [weak self] in
-                    if let this = self {
-                        DispatchQueue.main.async {
-                            this.collectionView!.reloadSections(NSIndexSet(index: sectionIndex) as IndexSet)
-                        }
-                    }
-                })
-            )
-        }
-        else if type == NSFetchedResultsChangeType.delete {
-            print("Delete Section: \(sectionIndex)")
-            blockOperations.append(
-                BlockOperation(block: { [weak self] in
-                    if let this = self {
-                        DispatchQueue.main.async {
-                            this.collectionView!.deleteSections(NSIndexSet(index: sectionIndex) as IndexSet)
-                        }
-                    }
-                })
-            )
-        }
+//        switch type {
+//        case .insert:
+//            tableView.insertRows(at: [newIndexPath!], with: .fade)
+//        case .delete:
+//            tableView.deleteRows(at: [indexPath!], with: .fade)
+//        case .update:
+//            tableView.reloadRows(at: [indexPath!], with: .fade)
+//        case .move:
+//            tableView.moveRow(at: indexPath!, to: newIndexPath!)
+//        }
     }
     
     func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
-        
-        // Checks if we should reload the collection view to fix a bug @ http://openradar.appspot.com/12954582
-        if (self.shouldReloadCollectionView) {
-            DispatchQueue.main.async {
-                self.collectionView.reloadData();
-            }
-        } else {
-            DispatchQueue.main.async {
-                
-                for operation: BlockOperation in self.blockOperations {
-                    operation.start()
-                }
-                
-                self.blockOperations.removeAll(keepingCapacity: false)
-                
-                self.collectionView!.performBatchUpdates({ () -> Void in
-                    for operation: BlockOperation in self.blockOperations {
-                        operation.start()
-                    }
-                }, completion: { (finished) -> Void in
-                    self.blockOperations.removeAll(keepingCapacity: false)
-                })
-            }
-        }
+        self.collectionView.reloadData()
     }
-    
-    deinit {
-        for operation: BlockOperation in blockOperations {
-            operation.cancel()
-        }
-        blockOperations.removeAll(keepingCapacity: false)
-    }
-    
 }
