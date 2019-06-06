@@ -79,17 +79,17 @@ class ScheduleViewController: UIViewController {
         if let visibleContentVC = visibleContentVC, container == containerView {
             hideContentController(content: visibleContentVC)
         }
-        addChildViewController(content)
+        addChild(content)
         content.view.frame = container.bounds
         container.addSubview(content.view)
-        content.didMove(toParentViewController: self)
+        content.didMove(toParent: self)
         visibleContentVC = content
     }
     
     private func hideContentController(content: UIViewController) {
-        content.willMove(toParentViewController: nil)
+        content.willMove(toParent: nil)
         content.view.removeFromSuperview()
-        content.removeFromParentViewController()
+        content.removeFromParent()
     }
     
     private func configureChildVCs() {

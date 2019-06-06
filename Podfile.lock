@@ -2,7 +2,7 @@ PODS:
   - MagicalRecord (2.3.2):
     - MagicalRecord/Core (= 2.3.2)
   - MagicalRecord/Core (2.3.2)
-  - SwipeCellKit (2.5.1)
+  - SwipeCellKit (2.6.0)
 
 DEPENDENCIES:
   - MagicalRecord
@@ -15,8 +15,8 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
-  SwipeCellKit: 30fd6a4f8a8b8ac864ea389c8b4c8bac5ba5471a
+  SwipeCellKit: 935ca28c187ec6e1ffb2b578cf8ddca842bfdcbb
 
 PODFILE CHECKSUM: e012998d48e170afce77e6507d3125e5298c272c
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.1

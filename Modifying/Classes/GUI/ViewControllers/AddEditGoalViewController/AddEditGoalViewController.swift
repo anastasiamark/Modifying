@@ -32,9 +32,10 @@ class AddEditGoalViewController: UIViewController {
         }
         
         MagicalRecord.save ({ (localContext) in
-            let storedGoal = StoredGoal.mr_createEntity(in: localContext) as! StoredGoal
-            storedGoal.isDone = false
-            storedGoal.name = activeGoalName
+            if let storedGoal = StoredGoal.mr_createEntity(in: localContext) {
+                storedGoal.isDone = false
+                storedGoal.name = activeGoalName
+            }
         })
         
         if let vc = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: String(describing: ScheduleViewController.self)) as? ScheduleViewController {

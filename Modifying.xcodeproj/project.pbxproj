@@ -84,9 +84,59 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0445DD3822A4F1A60080A461 /* GUI */ = {
+			isa = PBXGroup;
+			children = (
+				58FF9367215E4A95004FC40A /* ViewControllers */,
+			);
+			path = GUI;
+			sourceTree = "<group>";
+		};
+		0445DD3922A4F2210080A461 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				58FF936F215E5FD9004FC40A /* ActiveGoalCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		0445DD3A22A4F2AB0080A461 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				58C312D6218074CF00A7522B /* AddEditeGoalNameCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		0445DD3B22A4F3110080A461 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				588A8E6621AC4B67006FAF53 /* ScheduleCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		0445DD3C22A4F4840080A461 /* CommonViews */ = {
+			isa = PBXGroup;
+			children = (
+				0445DD3D22A4F4A90080A461 /* Views */,
+				58FF9368215E570E004FC40A /* Cells */,
+			);
+			path = CommonViews;
+			sourceTree = "<group>";
+		};
+		0445DD3D22A4F4A90080A461 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		581D392D21887922008546A5 /* ScheduleViewController */ = {
 			isa = PBXGroup;
 			children = (
+				586CFA3E219439DD00EEAB29 /* Views */,
+				0445DD3B22A4F3110080A461 /* Cells */,
 				581D392E218A242C008546A5 /* ScheduleViewController.swift */,
 			);
 			path = ScheduleViewController;
@@ -171,6 +221,7 @@
 		58C312D32180711600A7522B /* AddEditGoalViewController */ = {
 			isa = PBXGroup;
 			children = (
+				0445DD3A22A4F2AB0080A461 /* Cells */,
 				58C312D42180723A00A7522B /* AddEditGoalViewController.swift */,
 			);
 			path = AddEditGoalViewController;
@@ -229,10 +280,8 @@
 			isa = PBXGroup;
 			children = (
 				586CFA4221943E0100EEAB29 /* Extentions */,
-				586CFA3E219439DD00EEAB29 /* Views */,
-				58FF9368215E570E004FC40A /* Cells */,
-				58FF9367215E4A95004FC40A /* ViewControllers */,
 				58FF9363215D51AB004FC40A /* Models */,
+				0445DD3822A4F1A60080A461 /* GUI */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -248,6 +297,7 @@
 		58FC161D215BA8D800BF2712 /* ActiveGoalsViewController */ = {
 			isa = PBXGroup;
 			children = (
+				0445DD3922A4F2210080A461 /* Cells */,
 				58FC1608215B9D6700BF2712 /* ActiveGoalsViewController.swift */,
 			);
 			path = ActiveGoalsViewController;
@@ -272,9 +322,10 @@
 		58FF9367215E4A95004FC40A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				0445DD3C22A4F4840080A461 /* CommonViews */,
+				588A8E6B21AD7AF9006FAF53 /* BaseViewController */,
 				58F61B45220CB5D100022708 /* CoreDataViewController */,
 				588A8E7421ADB6E4006FAF53 /* IntervalScheduleViewController */,
-				588A8E6B21AD7AF9006FAF53 /* BaseViewController */,
 				581D392D21887922008546A5 /* ScheduleViewController */,
 				58C312D32180711600A7522B /* AddEditGoalViewController */,
 				5885A765217E16C500E2598D /* HabitsViewController */,
@@ -287,10 +338,7 @@
 		58FF9368215E570E004FC40A /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				588A8E6621AC4B67006FAF53 /* ScheduleCell */,
-				58C312D6218074CF00A7522B /* AddEditeGoalNameCell */,
 				58FF937C215EA025004FC40A /* DynamicCell */,
-				58FF936F215E5FD9004FC40A /* ActiveGoalCell */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -364,6 +412,7 @@
 				TargetAttributes = {
 					58FC1602215B9D6700BF2712 = {
 						CreatedOnToolsVersion = 9.4;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -429,7 +478,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Modifying/Pods-Modifying-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Modifying/Pods-Modifying-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/MagicalRecord/MagicalRecord.framework",
 				"${BUILT_PRODUCTS_DIR}/SwipeCellKit/SwipeCellKit.framework",
 			);
@@ -440,7 +489,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Modifying/Pods-Modifying-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Modifying/Pods-Modifying-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -613,7 +662,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RCRK7A4747;
+				DEVELOPMENT_TEAM = TXRFU397LA;
 				INFOPLIST_FILE = Modifying/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -621,7 +670,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.anastasiamarkovskaya.Modifying;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -632,7 +681,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = RCRK7A4747;
+				DEVELOPMENT_TEAM = TXRFU397LA;
 				INFOPLIST_FILE = Modifying/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -640,7 +689,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.anastasiamarkovskaya.Modifying;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
